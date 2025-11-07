@@ -46,7 +46,7 @@ body {
     padding: 20px;
 }
 .section-content {
-    min-height: 80vh; /* スクロールできるように長めに設定 */
+    min-height: 80vh; 
     padding: 100px 50px;
     display: flex;
     flex-direction: column;
@@ -73,7 +73,7 @@ h2 {
 /* 💥 DiscordボタンのスタイルとCSSアニメーション */
 #discord-button-wrapper {
     position: relative;
-    width: 300px; /* パーティクル領域確保 */
+    width: 300px; 
     height: 60px;
     margin: 40px 0;
 }
@@ -91,14 +91,13 @@ h2 {
     height: 100%;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
-    z-index: 10; /* パーティクルより手前に */
+    z-index: 10; 
 }
 /* ホバー時のグリッチ風アニメーション (CSS) */
 #discord-link:hover {
     color: #000;
     background-color: #0f0;
     box-shadow: 0 0 15px #0f0;
-    /* わずかな位置のズレでグリッチ感を出す */
     animation: glitch-hover 0.1s infinite alternate; 
 }
 @keyframes glitch-hover {
@@ -109,10 +108,26 @@ h2 {
 /* Particle.jsのコンテナ */
 #particles-js {
     position: absolute;
-    top: -50px; /* ボタンより広めに設定 */
+    top: -50px; 
     left: -50px;
     width: 400px;
     height: 160px;
     z-index: 5;
-    pointer-events: none; /* クリックを通過させる */
+    pointer-events: none; 
+}
+
+/* 🌸 桜のパーティクル CSS */
+.sakura-petal {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #ffb3c7; /* 薄いピンク */
+    border-radius: 50% 10% 50% 10%; 
+    box-shadow: 0 0 3px rgba(255, 179, 199, 0.8);
+    pointer-events: none; 
+    opacity: 0; 
+    transform: rotate(0deg); 
+    z-index: 10000; 
 }
