@@ -1,0 +1,118 @@
+/* リセットと基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    font-family: 'Consolas', 'Courier New', monospace;
+    background-color: #000; 
+    color: #0f0; /* ネオングリーンを基調色に */
+    line-height: 1.6;
+}
+
+/* ⚡️ ローディング画面設定 */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#svg-container {
+    width: 250px;
+    height: 250px;
+}
+#main-svg {
+    filter: drop-shadow(0 0 5px #0f0); /* ネオン効果 */
+}
+
+/* メインコンテンツレイアウト */
+#main-content {
+    opacity: 0; /* JSで表示するまで隠す */
+}
+
+.full-screen-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.section-content {
+    min-height: 80vh; /* スクロールできるように長めに設定 */
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* テキストスタイル */
+h1 {
+    font-size: 6em;
+    text-shadow: 0 0 10px #0f0;
+}
+h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+.code-text {
+    font-size: 1.5em;
+    background-color: #0a0101;
+    border: 1px dashed #0f0;
+    padding: 5px 15px;
+}
+
+/* 💥 DiscordボタンのスタイルとCSSアニメーション */
+#discord-button-wrapper {
+    position: relative;
+    width: 300px; /* パーティクル領域確保 */
+    height: 60px;
+    margin: 40px 0;
+}
+#discord-link {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #0f0;
+    text-decoration: none;
+    color: #0f0;
+    font-size: 1.2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    z-index: 10; /* パーティクルより手前に */
+}
+/* ホバー時のグリッチ風アニメーション (CSS) */
+#discord-link:hover {
+    color: #000;
+    background-color: #0f0;
+    box-shadow: 0 0 15px #0f0;
+    /* わずかな位置のズレでグリッチ感を出す */
+    animation: glitch-hover 0.1s infinite alternate; 
+}
+@keyframes glitch-hover {
+    0% { transform: translate(1px, 1px); }
+    100% { transform: translate(-1px, -1px); }
+}
+
+/* Particle.jsのコンテナ */
+#particles-js {
+    position: absolute;
+    top: -50px; /* ボタンより広めに設定 */
+    left: -50px;
+    width: 400px;
+    height: 160px;
+    z-index: 5;
+    pointer-events: none; /* クリックを通過させる */
+}
