@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nanashi - ポートフォリオ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+    <div id="loading-screen">
+        <div id="svg-container">
+            <svg viewBox="0 0 100 100" id="main-svg">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#0f0" stroke-width="5" class="svg-element"/>
+                <rect x="25" y="25" width="50" height="50" fill="#0f0" class="svg-element"/>
+            </svg>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <section class="full-screen-section" id="section-nanashi">
+            <h1 class="anim-target" data-delay="0.2">nanashi</h1>
+            <p class="anim-target" data-delay="0.4">ネット活動名</p>
+        </section>
+
+        <section class="section-content" id="section-discord">
+            <h2 class="anim-target">Discord ID</h2>
+            <p class="anim-target code-text">n6s0</p>
+        </section>
+
+        <section class="section-content" id="section-link">
+            <h2 class="anim-target">Community Access</h2>
+            <div id="discord-button-wrapper">
+                <a href="https://discord.gg/KwyAnKYzQV" id="discord-link">
+                    自鯖へGO! (クリックで爆発💥)
+                </a>
+                <div id="particles-js"></div>
+            </div>
+            <p class="anim-target">↑ ホバーやクリックでアニメーションが発生します。</p>
+        </section>
+        
+        <section class="full-screen-section" id="footer-space">
+            <p>End of Transmission. Scroll up!</p>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
