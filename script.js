@@ -120,8 +120,8 @@ function initParticleExplosion() {
 // D. タップ/クリックで効果音と小さな桜が舞うアニメーション (統合)
 // ----------------------------------------------------
 function initTapSoundAndSakura() {
-    const PETAL_COUNT = 8; // 小さく舞うので数を減らす
-    const audio = document.getElementById('tap-se'); // オーディオ要素を取得
+    const PETAL_COUNT = 8;
+    const audio = document.getElementById('tap-se');
 
     document.addEventListener('click', (e) => {
         const clickX = e.clientX;
@@ -129,7 +129,7 @@ function initTapSoundAndSakura() {
         
         // 1. クリック音を再生
         if (audio) {
-            audio.currentTime = 0; // 連続再生に対応
+            audio.currentTime = 0;
             audio.play().catch(error => {
                 // 自動再生ポリシー対策のためのエラー処理
             });
@@ -145,15 +145,15 @@ function initTapSoundAndSakura() {
                 x: clickX,
                 y: clickY,
                 opacity: 1,
-                scale: gsap.utils.random(0.3, 0.8), // サイズを小さく
+                scale: gsap.utils.random(0.3, 0.8),
             });
 
             // 舞い上がりと回転 (短く、小さく舞うように調整)
             gsap.to(petal, {
-                duration: gsap.utils.random(1.0, 2.0), // 舞う時間を短く
-                x: clickX + gsap.utils.random(-50, 50), // X方向に短く流す
-                y: clickY + gsap.utils.random(-80, -30), // Y方向（上）に短く舞い上げる
-                rotation: gsap.utils.random(180, 360), 
+                duration: gsap.utils.random(1.0, 2.0),
+                x: clickX + gsap.utils.random(-50, 50),
+                y: clickY + gsap.utils.random(-80, -30),
+                rotation: gsap.utils.random(180, 360),
                 opacity: 0, 
                 ease: "power1.out",
                 onComplete: () => {
@@ -169,6 +169,6 @@ function initTapSoundAndSakura() {
 // ----------------------------------------------------
 window.addEventListener('load', () => {
     initParticleExplosion(); 
-    initTapSoundAndSakura(); // タップ音と桜の統合関数
+    initTapSoundAndSakura();
     initLoadingAnimation();
 });
