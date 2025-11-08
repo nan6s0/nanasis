@@ -123,6 +123,7 @@ h3 {
     color: #0f0;
     text-decoration: none;
     font-size: 1.2em;
+    word-break: break-all; /* リンクが長い場合に改行を許可 */
     transition: transform 0.3s ease-in-out, background-color 0.3s;
 }
 
