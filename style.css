@@ -53,6 +53,10 @@ body {
     align-items: center;
     text-align: center;
 }
+.staff-info-container {
+    margin: 20px 0;
+}
+
 
 /* テキストスタイル */
 h1 {
@@ -63,6 +67,11 @@ h2 {
     font-size: 3em;
     margin-bottom: 30px;
 }
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
 .code-text {
     font-size: 1.5em;
     background-color: #0a0101;
@@ -70,7 +79,7 @@ h2 {
     padding: 5px 15px;
 }
 
-/* 💥 DiscordボタンのスタイルとCSSアニメーション */
+/* 💥 DiscordボタンのスタイルとCSSアニメーション (自鯖) */
 #discord-button-wrapper {
     position: relative;
     width: 300px; 
@@ -105,6 +114,24 @@ h2 {
     100% { transform: translate(-1px, -1px); }
 }
 
+/* 🤝 スタッフサーバーリンクのスタイル */
+.discord-staff-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: 1px solid #0f0;
+    color: #0f0;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+/* ホバーで揺れるアニメーション */
+.discord-staff-link:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    transform: scale(1.05) rotate(-1deg);
+}
+
 /* Particle.jsのコンテナ */
 #particles-js {
     position: absolute;
@@ -123,7 +150,7 @@ h2 {
     left: 0;
     width: 10px;
     height: 10px;
-    background-color: #ffb3c7; /* 薄いピンク */
+    background-color: #ffb3c7; 
     border-radius: 50% 10% 50% 10%; 
     box-shadow: 0 0 3px rgba(255, 179, 199, 0.8);
     pointer-events: none; 
